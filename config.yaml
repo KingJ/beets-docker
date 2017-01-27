@@ -1,0 +1,60 @@
+plugins: fetchart embedart convert scrub replaygain lastgenre chroma web mbsync
+directory: /music
+library: /etc/beets/musiclibrary.blb
+art_filename: cover
+threaded: yes
+original_date: no
+per_disc_numbering: no
+
+convert:
+    auto: no
+    ffmpeg: /usr/bin/ffmpeg
+    opts: -ab 320k -ac 2 -ar 48000
+    max_bitrate: 320
+    threads: 1
+
+paths:
+    default: $albumartist/$album%aunique{}/%right{$disc,1}.$track - $title
+    singleton: Non-Album/$artist - $title
+    comp: Compilations/$album%aunique{}/%right{$disc,1}.$track - $title
+    albumtype_soundtrack: OST/$album/%right{$disc,1}.$track $title
+
+import:
+    write: yes
+    copy: no
+    move: no
+    resume: ask
+    incremental: yes
+    quiet_fallback: skip
+    timid: yes
+    log: /var/log/beet.log
+
+lastgenre:
+    auto: yes
+    source: album
+
+fetchart:
+    auto: yes
+
+replaygain:
+    backend: bs1770gain
+    auto: yes
+
+scrub:
+    auto: yes
+
+replace:
+    '^\.': _
+    '[\x00-\x1f]': _
+    '[<>:"\?\*\|]': _
+    '[\xE8-\xEB]': e
+    '[\xEC-\xEF]': i
+    '[\xE2-\xE6]': a
+    '[\xF2-\xF6]': o
+    '[\xF8]': o
+    '\.$': _
+    '\s+$': ''
+
+web:
+    host: 0.0.0.0
+    port: 8337
