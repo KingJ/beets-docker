@@ -1,7 +1,11 @@
 FROM ubuntu:16.04
 
 ENV BEETSDIR /etc/beets/
-ENV LANG en_GB.UTF-8
+
+RUN locale-gen en_GB.UTF-8  
+ENV LANG en_GB.UTF-8  
+ENV LANGUAGE en_GB:en  
+ENV LC_ALL en_GB.UTF-8
 
 RUN apt-get -y update && apt-get install -y \
   python3-pip \
