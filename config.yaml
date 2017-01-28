@@ -1,4 +1,4 @@
-plugins: fetchart embedart convert scrub replaygain lastgenre chroma web mbsync
+plugins: fetchart embedart convert scrub replaygain lastgenre chroma web mbsync copyartifacts
 directory: /music
 library: /etc/beets/musiclibrary.blb
 art_filename: cover

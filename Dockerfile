@@ -15,6 +15,7 @@ RUN apt-get -y update && apt-get install -y \
 
 RUN pip3 install \
   beets[fetchart,lastgenre,chroma,web] \
+  beets-copyartifacts
   flask
 
 COPY config.yaml /etc/beets/config.yaml
