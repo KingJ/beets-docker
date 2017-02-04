@@ -16,8 +16,8 @@ convert:
 paths:
     default: $albumartist/$album%aunique{}/%right{$disc,1}.$track - $title
     singleton: Non-Album/$artist - $title
+    albumtype:soundtrack: OST/$album/%right{$disc,1}.$track $title
     comp: Compilations/$album%aunique{}/%right{$disc,1}.$track - $title
-    albumtype_soundtrack: OST/$album/%right{$disc,1}.$track $title
 
 import:
     write: yes
