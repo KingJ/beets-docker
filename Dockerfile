@@ -1,9 +1,6 @@
-FROM ubuntu:16.04
+FROM ubuntu:17.04
 
 ENV BEETSDIR /etc/beets/
-
-# Use latest stable version of ffmpeg
-RUN add-apt-repository ppa:jonathonf/ffmpeg-3
 
 RUN apt-get -y update && apt-get install -y \
   locales \
