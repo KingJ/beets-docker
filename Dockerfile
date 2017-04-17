@@ -3,7 +3,7 @@ FROM ubuntu:16.04
 ENV BEETSDIR /etc/beets/
 
 # Use latest stable version of ffmpeg
-RUN sudo add-apt-repository ppa:mc3man/trusty-media
+RUN add-apt-repository ppa:jonathonf/ffmpeg-3
 
 RUN apt-get -y update && apt-get install -y \
   locales \
