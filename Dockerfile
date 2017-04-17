@@ -21,10 +21,10 @@ RUN pip3 install \
   flask
 
 # Manually update replaygain.py for Python 3 compatibility - only required in 1.4.3.
-RUN wget https://raw.githubusercontent.com/beetbox/beets/master/beetsplug/replaygain.py -P /usr/local/lib/python3.5/dist-packages/beetsplug/
+RUN wget https://raw.githubusercontent.com/beetbox/beets/master/beetsplug/replaygain.py -O /usr/local/lib/python3.5/dist-packages/beetsplug/replaygain.py
 
 # Manually add the latest version of the Copy Artifacts plugin for Python 3 compatibility.
-RUN wget https://raw.githubusercontent.com/sbarakat/beets-copyartifacts/master/beetsplug/copyartifacts.py -P /usr/local/lib/python3.5/dist-packages/beetsplug/
+RUN wget https://raw.githubusercontent.com/sbarakat/beets-copyartifacts/master/beetsplug/copyartifacts.py -O /usr/local/lib/python3.5/dist-packages/beetsplug/copyartifacts.py
   
 COPY config.yaml /etc/beets/config.yaml
 
