@@ -15,7 +15,7 @@ RUN apt-get -y update && apt-get install -y \
 
 RUN pip3 install \
   beets[fetchart,lastgenre,chroma,web] \
-  beets-copyartifacts
+  beets-copyartifacts \
   flask
 
 # Manually update replaygain.py for Python 3 compatibility - only required in 1.4.3.
