@@ -22,6 +22,6 @@ COPY config.yaml /etc/beets/config.yaml
 
 EXPOSE 8337
 
-VOLUME /etc/beets /music /import
+VOLUME /etc/beets /music /import /convert
 
 CMD beet web
