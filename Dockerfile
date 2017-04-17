@@ -2,6 +2,9 @@ FROM ubuntu:16.04
 
 ENV BEETSDIR /etc/beets/
 
+# Use latest stable version of ffmpeg
+RUN sudo add-apt-repository ppa:mc3man/trusty-media
+
 RUN apt-get -y update && apt-get install -y \
   locales \
   python3-pip \
