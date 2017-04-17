@@ -7,7 +7,8 @@ RUN apt-get -y update && apt-get install -y \
   python3-pip \
   bs1770gain \
   libchromaprint-tools \
-  ffmpeg 
+  ffmpeg \
+  wget
 
 RUN locale-gen en_GB.UTF-8  
 ENV LANG en_GB.UTF-8  
