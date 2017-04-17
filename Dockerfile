@@ -18,6 +18,9 @@ RUN pip3 install \
   beets-copyartifacts
   flask
 
+# Manually add the latest version of the Copy Artifacts plugin for Python 3 compatibility.
+RUN wget https://raw.githubusercontent.com/sbarakat/beets-copyartifacts/master/beetsplug/copyartifacts.py -P /usr/local/lib/python3.5/dist-packages/beetsplug/
+  
 COPY config.yaml /etc/beets/config.yaml
 
 EXPOSE 8337
