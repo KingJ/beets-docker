@@ -8,7 +8,7 @@ RUN apt-get -y update && apt-get install -y \
   bs1770gain \
   libchromaprint-tools \
   ffmpeg \
-  wget
+  curl
 
 RUN locale-gen en_GB.UTF-8  
 ENV LANG en_GB.UTF-8  
@@ -21,7 +21,7 @@ RUN pip3 install \
   flask
 
 # Manually add the latest version of the Copy Artifacts plugin for Python 3 compatibility.
-RUN wget https://raw.githubusercontent.com/sbarakat/beets-copyartifacts/master/beetsplug/copyartifacts.py -O /usr/local/lib/python3.5/dist-packages/beetsplug/copyartifacts.py
+RUN curl https://raw.githubusercontent.com/sbarakat/beets-copyartifacts/master/beetsplug/copyartifacts.py --create-dirs -o /usr/local/lib/python3.5/dist-packages/beetsplug/copyartifacts.py
   
 COPY config.yaml /etc/beets/config.yaml
 
