@@ -17,11 +17,8 @@ ENV LC_ALL en_GB.UTF-8
 
 RUN pip3 install \
   beets[fetchart,lastgenre,chroma,web]==1.4.9 \
-  beets-copyartifacts \
+  beets-extrafiles \
   flask
-
-# Manually add the latest version of the Copy Artifacts plugin for Python 3 compatibility.
-RUN curl https://raw.githubusercontent.com/sbarakat/beets-copyartifacts/master/beetsplug/copyartifacts.py --create-dirs -o /usr/local/lib/python3.6/dist-packages/beetsplug/copyartifacts.py
   
 COPY config.yaml /etc/beets/config.yaml
 
