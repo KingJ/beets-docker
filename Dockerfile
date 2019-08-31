@@ -16,7 +16,7 @@ ENV LANGUAGE en_GB:en
 ENV LC_ALL en_GB.UTF-8
 
 RUN pip3 install \
-  beets[fetchart,lastgenre,chroma,web]==1.4.6 \
+  beets[fetchart,lastgenre,chroma,web]==1.4.9 \
   beets-copyartifacts \
   flask
 
